@@ -12,6 +12,7 @@
     "angular-messages": "latest",
     "angular-resource": "latest",
     "angular-ui-router": "latest",
-    "angular-ui-select": "latest"
+    "angular-ui-select": "latest",
+    "angular-recaptcha": "latest"
   }
 }
