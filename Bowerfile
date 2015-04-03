@@ -13,3 +13,4 @@
   asset 'angular-resource'
   asset 'angular-ui-router'
   asset 'angular-ui-select'
+  asset 'angular-recaptcha'

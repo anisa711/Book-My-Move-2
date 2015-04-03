@@ -12,8 +12,9 @@ var bookmymove = angular.module('bookmymove',[
   'ngMessages',
   'ui.mask',
   'ui.router',
-  'ui.select'
-	]);
+  'ui.select',
+  'vcRecaptcha'
+]);
 bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $locationProvider,$mdThemingProvider){
 	$stateProvider.state('home',{
       url: '/',
@@ -25,7 +26,7 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
       controller: 'MapCtrl'
     }).state('registration',{
       url: '/registration',
-      templateUrl: 'packer_registration.html',
+      templateUrl: 'registration.html',
       controller: 'RegistrationCtrl'
     }).state('feedback', {
       url: '/feedback',

@@ -26,5 +26,6 @@
 //= require angular-messages/angular-messages
 //= require angular-ui-select/dist/select.js
 //= require angular-ui-router
+//= require angular-recaptcha/release/angular-recaptcha
 //= require_tree .
 
