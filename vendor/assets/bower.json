@@ -13,6 +13,7 @@
     "angular-resource": "latest",
     "angular-ui-router": "latest",
     "angular-ui-select": "latest",
-    "angular-recaptcha": "latest"
+    "angular-recaptcha": "latest",
+    "angular-datepicker": "latest"
   }
 }

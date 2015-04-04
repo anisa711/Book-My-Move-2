@@ -1,4 +1,3 @@
-
 var bookmymove = angular.module('bookmymove',[
 	'ngRoute',
 	'templates',
@@ -8,7 +7,7 @@ var bookmymove = angular.module('bookmymove',[
 	'ngAutocomplete',
   'ui.date',
   'ui.map',
-  'pickadate',
+  '720kb.datepicker',
   'ngMessages',
   'ui.mask',
   'ui.router',
@@ -184,7 +183,7 @@ $scope.userType = 'vendor';
 }else{
 $scope.userType = 'Client';
 };
-console.log('userType: '+$scope.userType);
+console.log('userType: '+ $scope.userType);
 $scope.cities = [
     { name: 'Pune'},
     { name: 'Ahmednagar'},

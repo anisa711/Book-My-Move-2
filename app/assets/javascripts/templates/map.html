@@ -11,10 +11,10 @@
                     <label>to:</label>
                     <input type="text" options="options2" ng-model="mapService.end_loc" ng-autocomplete="mapService.end_loc" ng-mouseenter="mapService.calcRoute()" ng-change="mapService.calcRoute()" required/>
                 </md-input-container>
-                <md-input-container>
-                    <div class="col-lg-1"><label>Date:</label>
-                    <input pickadate ng-model="date" Required/></div>
-                </md-input-container>
+                <datepicker date-format="dd/MM/yyyy" date-min-limit="">
+                    <input ng-model="date" type="text">
+                </datepicker>
+
                 <b>can a moving truck park outside your house?</b><section layout="row"><span><md-checkbox class="md-primary">yes</md-checkbox></span><md-checkbox class="md-primary">no</md-checkbox><md-checkbox class="md-primary">don't know</md-checkbox></section>
             </md-content>    
         </div>
