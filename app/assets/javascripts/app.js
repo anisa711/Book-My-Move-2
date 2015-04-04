@@ -19,13 +19,16 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 	$stateProvider.state('home',{
       url: '/',
 		  templateUrl: 'index.html',
-		  controller: 'indexCtrl'
 	  }).state('map',{
       url: '/map',
       templateUrl: 'map.html',
       controller: 'MapCtrl'
     }).state('registration',{
       url: '/registration',
+      templateUrl: 'registration.html',
+      controller: 'RegistrationCtrl'
+    }).state('vendor',{
+      url: '/vendor',
       templateUrl: 'registration.html',
       controller: 'RegistrationCtrl'
     }).state('feedback', {
@@ -142,12 +145,6 @@ bookmymove.service('mapService',['$rootScope', function($rootScope) {
 }]);
 
 //Controllers
-bookmymove.controller('indexCtrl', ['$scope', function($scope){
-console.log('juned');
-}]);
-
-
-
 bookmymove.controller('MapCtrl', ['$scope','mapService', function($scope,mapService){
   $scope.result2 = '';
   $scope.options2 = {
@@ -168,8 +165,9 @@ bookmymove.controller('MapCtrl', ['$scope','mapService', function($scope,mapServ
     });
     $scope.currentdate = new Date();
 }]);
-bookmymove.controller('RegistrationCtrl', ['$scope', function($scope){
+bookmymove.controller('RegistrationCtrl', ['$scope','$state', function($scope,$state){
 
+$scope.idfire = $state;
 $scope.firstName = '';
 $scope.lastName = '';
 $scope.emailid = '';
@@ -179,8 +177,14 @@ $scope.pincode = '';
 $scope.pattern_pin = '999-999';
 $scope.password = '';
 $scope.confirmpassword = '';
+$scope.companyname= '';
 $scope.state = {};
-
+if ($state.current.name !== 'registration') {
+$scope.userType = 'vendor';
+}else{
+$scope.userType = 'Client';
+};
+console.log('userType: '+$scope.userType);
 $scope.cities = [
     { name: 'Pune'},
     { name: 'Ahmednagar'},
