@@ -12,40 +12,41 @@ var bookmymove = angular.module('bookmymove',[
   'ui.mask',
   'ui.router',
   'ui.select',
-  'vcRecaptcha'
+  'vcRecaptcha',
+  'named-views.aboutus',
+  'named-views.registration',
+  'named-views.vendor'
 ]);
 bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $locationProvider,$mdThemingProvider){
 	$stateProvider.state('home',{
       url: '/',
-		  templateUrl: 'index.html',
-	  }).state('map',{
+      views: {
+        'header': {
+          templateUrl: 'header.html'
+        },
+        'content': {
+          templateUrl: 'index.html'
+        },
+        'footer':{
+          templateUrl: 'footer.html'
+        }
+      }   
+    }).state('map',{
       url: '/map',
       templateUrl: 'map.html',
       controller: 'MapCtrl'
-    }).state('registration',{
-      url: '/registration',
-      templateUrl: 'registration.html',
-      controller: 'RegistrationCtrl'
-    }).state('vendor',{
-      url: '/vendor',
-      templateUrl: 'registration.html',
-      controller: 'RegistrationCtrl'
     }).state('feedback', {
       url: '/feedback',
       templateUrl: 'feedback.html',
       controller: 'feedbackCtrl'
-    }).state('About', {
-      url: '/About',
-      templateUrl: 'About.html',
-      controller: 'AboutCtrl'
     })
   ;
   $urlRouterProvider.otherwise('/');
-  //$locationProvider.html5Mode(true);
-    $mdThemingProvider.theme('docs-dark', 'default')
-        .primaryPalette('teal');
-        $mdThemingProvider.theme('docs-darks', 'default')
-        .primaryPalette('blue');
+  //$locationProvider.html5Mode(false).hashPrefix('!');
+  $mdThemingProvider.theme('docs-dark', 'default')
+   .primaryPalette('teal');
+    $mdThemingProvider.theme('docs-darks', 'default')
+   .primaryPalette('blue');
 }]);
 
 //service
@@ -162,11 +163,11 @@ bookmymove.controller('MapCtrl', ['$scope','mapService', function($scope,mapServ
       mapService = $scope.mapService;
       $scope.mapService = mapService;
     });
-    $scope.currentdate = new Date();
+    $scope.currentdate =  Date;
 }]);
 bookmymove.controller('RegistrationCtrl', ['$scope','$state', function($scope,$state){
 
-$scope.idfire = $state;
+$scope.uistate = $state;
 $scope.firstName = '';
 $scope.lastName = '';
 $scope.emailid = '';
@@ -178,7 +179,7 @@ $scope.password = '';
 $scope.confirmpassword = '';
 $scope.companyname= '';
 $scope.state = {};
-if ($state.current.name !== 'registration') {
+if ($state.current.name !== 'home.registration') {
 $scope.userType = 'vendor';
 }else{
 $scope.userType = 'Client';
