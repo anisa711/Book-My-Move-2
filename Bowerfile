@@ -14,3 +14,4 @@
   asset 'angular-ui-router'
   asset 'angular-ui-select'
   asset 'angular-recaptcha'
+  asset 'angular-datepicker'
