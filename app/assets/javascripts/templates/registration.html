@@ -31,7 +31,7 @@
                 <input input="text" name="lastname" ng-model="lastName" placeholder="Enter LastName" ng-model-options="{debounce: 750}" ng-required="true" minlength="3" ng-pattern="/^[a-zA-Z]{3,20}$/">
                 <div ng-show="!ClientForm.lastname.$pristine" ng-messages="ClientForm.lastname.$error" ng-messages-include="my-messages.html"></div>
               </md-input-container>
-              <md-input-container ng-if="idfire.current.name !== 'registration'">
+              <md-input-container ng-if="uistate.current.name !== 'home.registration'">
                 <label>Company Name*<i ng-show="ClientForm.cname.$valid && !ClientForm.cname.$pristine" class="fa fa-check fa-stack-1x"></i></label>
                 <input input="text" name="cname" ng-model="companyname" placeholder="Enter Company Name" ng-model-options="{debounce: 750}" ng-required="true" minlength="3" ng-pattern="/^[a-zA-Z]{3,20}$/">
                 <div ng-show="!ClientForm.cname.$pristine" ng-messages="ClientForm.cname.$error" ng-messages-include="my-messages.html"></div>
